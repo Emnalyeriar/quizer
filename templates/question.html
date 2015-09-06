@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <p>Pytanie:</p>
+    <p> {{ question }}</p>
+    <form method="POST">
+        <select name="answer" id="">
+        {% for answer in answers %}
+            <option value="{{ loop.index }}">{{ answer }}</option>
+        {% endfor %}
+        </select>
+        <p><button type="submit">Wyślij</button></p>
+    </form>
+{% endblock content %}
